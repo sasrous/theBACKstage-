@@ -10,8 +10,8 @@ const MongoStore = require('connect-mongo')(session);
 
 const auth = require('./routes/auth');
 const eventApi = require('./routes/eventApi');
-
-mongoose.connect('mongodb://localhost:27017/auth-react');
+require('dotenv').config();
+mongoose.connect('process.env.MONGODB_URI');
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
