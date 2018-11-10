@@ -172,8 +172,6 @@ router.put('/check', isLoggedIn(), (req, res, next) => {
 		for (i = 0; i < data.eventsJoined.length; i++) {
 			if (data.eventsJoined[i] === newEventId) {
 				res.status(200).json(data.eventsJoined[i]);
-			} else if (i === data.eventsJoined.length - 1) {
-				res.status(500).json({ error: 'error' });
 			}
 		}
 	});
