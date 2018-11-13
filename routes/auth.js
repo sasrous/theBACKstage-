@@ -56,7 +56,7 @@ router.post('/signup', (req, res, next) => {
 	const { username, password } = req.body;
 
 	if (!username || !password) {
-		return res.status(422).res.json({
+		return res.status(422).json({
 			error: 'empty'
 		});
 	}
